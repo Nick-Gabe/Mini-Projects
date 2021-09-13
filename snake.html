@@ -26,6 +26,10 @@
 
 <table class="tabela" style="top:190px">
     <tr class="definition">
+        <td>Best</td>
+        <td id="pb">0</td>
+    </tr>
+    <tr class="definition">
         <td>Points</td>
         <td id="points">0</td>
     </tr>
@@ -154,14 +158,18 @@
 </style>
 
 <script>
+    document.body.style.zoom="125%"
+
     var snake = document.getElementById('body0'),
         apple = document.getElementById('apple'),
         gameover = document.getElementsByClassName('gameover')[0],
 
         // texts
         points = document.getElementById('points'),
-        time = document.getElementById('time')
-    speed = document.getElementById('speed')
+        time = document.getElementById('time'),
+        speed = document.getElementById('speed'),
+        pbest = document.getElementById('pb')
+    pbest.innerText = localStorage.personalbest || 0
 
     // game configs
     var lastKey = null
@@ -193,7 +201,6 @@
             appley = Math.floor((Math.random() * 405) / 30) * 30 + 13
             if (!occupiedspaces.includes(`${applex} ${appley}`)) ct = 375
         }
-        console.log(occupiedspaces)
         occupiedspaces.push(`${applex} ${appley} apple`)
         let applePosX = document.getElementById('apple-posx')
         let applePosY = document.getElementById('apple-posy')
@@ -223,9 +230,9 @@
     document.addEventListener("keypress", function (event) {
         if (lastKey === null && event.keyCode === 119 || lastKey === null && event.keyCode === 97 ||
             lastKey === null && event.keyCode === 115 || lastKey === null && event.keyCode === 100) {
-                countTime()
-                lastKey = event.keyCode
-            }
+            countTime()
+            lastKey = event.keyCode
+        }
         if (event.keyCode === 119 || event.keyCode === 97 || event.keyCode === 115 || event.keyCode === 100) lastKey = event.keyCode
     })
 
@@ -252,6 +259,10 @@
                 createBox()
                 appleSpawn()
                 points.innerText++
+                if (Number(points.innerText) > Number(localStorage.personalbest)) {
+                    pbest.innerText++
+                    localStorage.personalbest = points.innerText
+                }
                 mps /= 1.1
                 speed.innerText = (250 / mps).toFixed(1)
                 clearInterval(playing)
