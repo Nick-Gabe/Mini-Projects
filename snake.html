@@ -1,0 +1,300 @@
+<img src="https://www.vippng.com/png/full/124-1240379_best-dots-transparent-background-transparent-dots-pattern-png.png"
+    alt="texture" id="texture" width="1100">
+<img src="https://media.discordapp.net/attachments/572946572598444043/886271714814726194/jogo_da_cobrinha.png"
+    alt="campo" id="background" />
+<span id="body0"></span>
+<div id="boxSection"></div>
+<span id="apple"></span>
+
+<table class="tabela">
+    <tr class="definition">
+        <td>Object</td>
+        <td>X</td>
+        <td>Y</td>
+    </tr>
+    <tr class="cell">
+        <td>Snake</td>
+        <td id="snake-posx">43</td>
+        <td id="snake-posy">43</td>
+    </tr>
+    <tr class="cell">
+        <td>Apple</td>
+        <td id="apple-posx"></td>
+        <td id="apple-posy"></td>
+    </tr>
+</table>
+
+<table class="tabela" style="top:190px">
+    <tr class="definition">
+        <td>Points</td>
+        <td id="points">0</td>
+    </tr>
+    <tr class="definition">
+        <td>Speed</td>
+        <td id="speed">1</td>
+    </tr>
+    <tr class="definition">
+        <td>Time</td>
+        <td id="time">0</td>
+    </tr>
+</table>
+
+<div class="gameover">
+    <span id="bg"></span>
+    <span id="endgame">GAME OVER</span>
+    <span id="replay" onmouseover="buttonOn(this.style)" style="background-color: #82b913;"
+        onmouseleave="buttonOff(this.style)" onclick="restart()">Play Again</span>
+</div>
+
+<div class="controls">
+    <img src="" alt="">
+</div>
+<style>
+    body {
+        background-color: #d38a1c;
+    }
+
+    #background {
+        position: absolute;
+        top: 10;
+        left: 10;
+        border-style: solid;
+        border-width: 3px;
+    }
+
+    #texture {
+        position: fixed;
+        top: -6px;
+        left: -10px;
+        border: 1px green solid;
+        opacity: 0.5;
+    }
+
+    #body0 {
+        position: absolute;
+        top: 43;
+        left: 43;
+        padding: 15px;
+        background-color: green;
+        border-radius: 10px;
+    }
+
+    .box {
+        position: absolute;
+        border-style: solid;
+        background-color: #d38a1c;
+        padding: 12px;
+        border-width: 3px;
+        border-radius: 10px;
+    }
+
+    .tabela {
+        position: absolute;
+        left: 770px;
+        font-family: monospace;
+        font-size: 30px;
+    }
+
+    td {
+        border-style: solid;
+        text-align: center;
+        border-color: #77a51a;
+    }
+
+    .definition {
+        background-color: #a2d049;
+    }
+
+    .cell {
+        background-color: #b0d454;
+    }
+
+    #apple {
+        position: absolute;
+        padding: 15px;
+        background-color: rgb(228, 13, 13);
+        border-radius: 100%;
+    }
+
+    .gameover {
+        display: none;
+        font-family: monospace;
+    }
+
+    #bg {
+        position: absolute;
+        top: 13px;
+        left: 13px;
+        padding-right: 750px;
+        padding-bottom: 450px;
+        background-color: red;
+        opacity: 0.2;
+    }
+
+    #endgame {
+        position: absolute;
+        top: 150px;
+        left: 275px;
+        font-size: 40px;
+        background-color: goldenrod;
+        border-style: dashed;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    #replay {
+        position: relative;
+        top: 240px;
+        left: 312;
+        font-size: 20px;
+        border-style: dashed;
+        padding: 10px;
+        border-radius: 20px;
+    }
+</style>
+
+<script>
+    var snake = document.getElementById('body0'),
+        apple = document.getElementById('apple'),
+        gameover = document.getElementsByClassName('gameover')[0],
+
+        // texts
+        points = document.getElementById('points'),
+        time = document.getElementById('time')
+    speed = document.getElementById('speed')
+
+    // game configs
+    var lastKey = null
+    var boxSection = document.getElementById('boxSection')
+    var occupiedspaces = []
+    var posx = 43, posy = 43
+    var applex, appley, boxX, boxY
+    var mps = 250
+
+    function restart() {
+        time.innerText = 0
+        lastKey = null
+        occupiedspaces = []
+        posx = 43, posy = 43
+        gameover.style.display = 'none'
+        start(mps)
+        appleSpawn()
+        points.innerText = 0
+        speed.innerText = 1
+        snake.style.display = 'inline'
+        apple.style.display = 'inline'
+        boxSection.innerHTML = ''
+    }
+
+    function appleSpawn() {
+        occupiedspaces = occupiedspaces.filter(x => x.includes('apple') ? false : true)
+        for (ct = 0; ct < 375; ct++) {
+            applex = Math.floor((Math.random() * 705) / 30) * 30 + 13
+            appley = Math.floor((Math.random() * 405) / 30) * 30 + 13
+            if (!occupiedspaces.includes(`${applex} ${appley}`)) ct = 375
+        }
+        console.log(occupiedspaces)
+        occupiedspaces.push(`${applex} ${appley} apple`)
+        let applePosX = document.getElementById('apple-posx')
+        let applePosY = document.getElementById('apple-posy')
+
+        apple.style.left = applex
+        apple.style.top = appley
+
+        applePosX.innerText = applex
+        applePosY.innerText = appley
+    }
+    appleSpawn()
+
+    function createBox() {
+        for (ct = 0; ct < 375; ct++) {
+            boxX = Math.floor((Math.random() * 705) / 30) * 30 + 13
+            boxY = Math.floor((Math.random() * 405) / 30) * 30 + 13
+            if (!occupiedspaces.includes(`${boxX} ${boxY}`)) ct = 375
+        }
+        occupiedspaces.push(`${boxX} ${boxY} box`)
+        boxSection.innerHTML += `<span class="box" id="box${points.innerText}"></span>`
+        let newBox = document.getElementById(`box${points.innerText}`)
+
+        newBox.style.left = boxX
+        newBox.style.top = boxY
+    }
+
+    document.addEventListener("keypress", function (event) {
+        if (lastKey === null && event.keyCode === 119 || lastKey === null && event.keyCode === 97 ||
+            lastKey === null && event.keyCode === 115 || lastKey === null && event.keyCode === 100) {
+                countTime()
+                lastKey = event.keyCode
+            }
+        if (event.keyCode === 119 || event.keyCode === 97 || event.keyCode === 115 || event.keyCode === 100) lastKey = event.keyCode
+    })
+
+    async function start(ms) {
+        let playing = setInterval(async () => {
+            switch (lastKey) {
+                case 119: // W
+                    posy -= posy - 30 < 0 ? -420 : 30
+                    break
+                case 97: // A
+                    posx -= posx - 30 < 0 ? -720 : 30
+                    break
+                case 115: // S
+                    posy += posy + 30 > 435 ? -420 : 30
+                    break
+                case 100: // D
+                    posx += posx + 30 > 735 ? -720 : 30
+                    break
+            }
+            snake.style.top = posy > 450 ? 450 : posy < 0 ? 0 : posy + 0.3
+            snake.style.left = posx > 750 ? 750 : posx < 0 ? 0 : posx + 0.3
+
+            if (posx === applex && posy === appley) {
+                createBox()
+                appleSpawn()
+                points.innerText++
+                mps /= 1.1
+                speed.innerText = (250 / mps).toFixed(1)
+                clearInterval(playing)
+                start(mps)
+            } else if (occupiedspaces.includes(`${posx} ${posy} box`)) {
+                clearInterval(playing)
+                gameover.style.display = 'inline'
+                snake.style.display = 'none'
+                apple.style.display = 'none'
+                mps = 250
+                countTime('stop')
+            }
+
+            let snakePosX = document.getElementById('snake-posx')
+            let snakePosY = document.getElementById('snake-posy')
+
+            snakePosX.innerText = posx
+            snakePosY.innerText = posy
+        }, ms)
+    }
+    start(mps)
+
+    var startTime
+    function countTime(instruction) {
+        switch (instruction) {
+            case 'stop':
+                clearInterval(startTime)
+                break
+            default:
+                startTime = setInterval(() => {
+                    time.innerText++
+                }, 1000)
+        }
+    }
+
+    function buttonOn(a) {
+        a.backgroundColor = '#5c830e';
+        a.cursor = "pointer";
+    }
+    function buttonOff(a) {
+        a.backgroundColor = '#82b913';
+        a.cursor = "pointer";
+    }
+
+
+</script>
