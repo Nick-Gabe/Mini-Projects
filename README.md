@@ -1,5 +1,7 @@
-# Mini-Projects
+# 🌱 Mini-Projects 
 Repository to share some minor projects I made while learning or just trying some things.
+
+(Click the link to open them)
 
 <div style="display:inline-block;vertical-align:top">
     <img width:"300" src="https://i.imgur.com/frGluLa.png" alt="Snake Game" align="left"/>
