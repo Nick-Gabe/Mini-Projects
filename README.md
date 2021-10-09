@@ -14,6 +14,6 @@ Repository to share some minor projects I made while learning or just trying som
 <div style="display:inline-block;vertical-align:top">
     <img src="https://i.imgur.com/UAVpx3C.png" alt="PassGenerator" align="left" width="500"/>
 </div>
-<h2><a href="https://htmlpreview.github.io/https://github.com/Nick-Gabe/Mini-Projects/blob/main/passwordCreator.html" target="_blank">Simple Password Generator</a></h2>
+<h2><a href="https://htmlpreview.github.io/?https://github.com/Nick-Gabe/Mini-Projects/blob/main/passwordCreator.html" target="_blank">Simple Password Generator</a></h2>
 <h6>Made in 4 hours, without doing details<br><br>
 *Made only in Portuguese, not translated to English</h6>
