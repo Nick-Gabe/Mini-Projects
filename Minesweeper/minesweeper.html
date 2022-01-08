@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./minesweeper.css">
+    <link rel="icon" href="./bandeira.ico">
+    <Title>Campo Minado</Title>
+</head>
+
+<body>
+    <div id="colorBg"></div>
+    <div id="fundo"></div>
+    <header class="interface">
+        <div>
+            <img src="./bomba.png" alt="bombas restantes" width="40">
+            <label for="bombas restantes" id="lastBombs">10</label>
+        </div>
+        
+        <div>
+            <img id="restart" src="./reiniciar.png" alt="reiniciar" width="35" onclick="generateWorld()">
+        </div>
+        
+        <div id="difficultySelector">
+            <img id="medidor" src="./medidor.png" alt="medidor de dificuldade" width="63">
+            <img id="ponteiro" src="./ponteiro.png" width="48" onclick="changeDifficulty()">
+        </div>
+        
+        <div>
+            <img src="./temporizador.png" alt="temporizador" width="35">
+            <label for="timer" id="timer" class="text">00:00</label>
+        </div>
+    </header>
+    
+    <section id="campo" oncontextmenu="return false"></section>
+    <section class="res">
+        <div id="resultScreen">
+            <img src="./parabéns.png" alt="vitória!" width="400">
+            <h1>Você venceu!</h1>
+            <h3 id='difficulty'>Dificuldade: Fácil</h3>
+            <div id="info">
+                <p id='timeSpent'>Tempo gasto: XX:XX</p>
+            </div>
+        </div>
+    </section>
+    <a href="https://github.com/Nick-Gabe" target="_blank" class="credits">Made by Nick-Gabe</a>
+</body>
+
+<script src="./minesweeper.js"></script>
+
+</html>
