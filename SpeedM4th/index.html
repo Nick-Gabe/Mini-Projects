@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-reset.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Speedmath</title>
+</head>
+
+<body>
+    <header class="header-container">
+        <a href="./index.html">
+            <img src="./logo.png" alt="SpeedMath logo" width="200">
+        </a>
+
+        <nav>
+            <ul class="header-navigation" id="header-navigation">
+                <li><a href="./index.html" class="header-selected">play</a></li>
+                <!-- <li><a href="./placares.html">leaderboards</a></li> -->
+                <li><a href="./sobre.html">about us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="container" class="container">
+            <!-- MENU -->
+            <div class="menu fade-in" id="menu">
+                <button class="menu-counter clickable" id="menu-counter">
+                    <img width="100" src="./play.png" alt="Play button">
+                </button>
+                <button class="menu-endless clickable" id="menu-endless" value="false">
+                <img src="./endless.jpg" alt="Infinite mode" width="60">
+                </button>
+                <!-- <button class="menu-language clickable" id="menu-language" value="en">
+                    <img src="./language_en.png" alt="Language: English" width="65">
+                </button> -->
+                <select name="menu-difficulty" id="menu-difficulty" class="menu-difficulty clickable">
+                    <option value="baby">super easy</option>
+                    <option value="easy">easy</option>
+                    <option value="medium">medium</option>
+                    <option value="hard">hard</option>
+                    <option value="impossible">impossible</option>
+                </select>
+            </div>
+            <!-- QUESTION -->
+            <section class="question-container" id="question-container">
+                <p id="timer" class="question-timer">00:00</p>
+                <h2 id="question-title" class="question-title">Question 2</h2>
+                <p id="question-calc" class="question-calc">10 x 3 = ?</p>
+                <p><input type="number" name="question-input" id="question-input" class="question-input"></p>
+                <button name="finishGame" id="question-finishGame" class="button clickable">
+                    <label for="finishGame" class="clickable">finish</label>
+                </button>
+            </section>
+            <!-- RESULTS -->
+            <section class="results-container" id="results-container">
+                <span id="results-timer" class="results-timer"></span>
+                <span id="results-quote" class="results-quote">Uh, well... atleast you completed it!</span>
+                <div id="timeChart" class="results-chart" style="width:90%; height:200px;"></div>
+                <ul>
+                    <li id="results-average">Average: 16.6s</li>
+                    <li id="results-percentage">Correct: 50%</li>
+                </ul>
+                <ol id="results-questions" class="results-questions">
+                    <!-- <li>
+                        <span class="correct">10 * 3 = 30</span>
+                        <p>Time spent: 10 seconds</p>
+                    </li>
+                    <li>
+                        <span class="wrong">7 * 8 = 54</span>
+                        <p>Time spent: 5 seconds</p>
+                    </li> -->
+                </ol>
+                <button class="button clickable" id="results-restart" name="results-restart">
+                    <label for="results-restart" class="clickable">Play again</label>
+                </button>
+            </section>
+        </div>
+    </main>
+    <!-- 
+    <footer>
+
+    </footer> -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

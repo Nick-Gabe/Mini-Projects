@@ -1,0 +1,126 @@
+{
+    "en": {
+        "play": "play",
+        "leaderboards": "leaderboards",
+        "about us": "about us",
+        "super easy": "super easy",
+        "easy": "easy",
+        "medium": "medium",
+        "hard": "hard",
+        "impossible": "impossible",
+        "time spent": "Time spent",
+        "question": "question",
+        "finish": "finish",
+        "time spent per question": "Time spent per question",
+        "questions": "Questions",
+        "time": "Time",
+        "phrases": {
+            "0": [
+                "You tried??",
+                "I was expecting that",
+                "Uh oh...",
+                "Wow, impressive eh?",
+                "¯\\_(ツ)_/¯",
+                "Please, why?",
+                "You must be trolling me",
+                "F!"
+            ],
+            "20": [
+                "We did our best, right?",
+                "One step at a time",
+                "Slowly but surely",
+                "D!"
+            ],
+            "50": [
+                "Wohooo, lets go!",
+                "Half perfect, half terrible",
+                "Ezpz",
+                "C!"
+            ],
+            "80": [
+                "That was close!",
+                "You\"re getting good",
+                "B!"
+            ],
+            "100": [
+                "Im so proud",
+                "100%!!",
+                "Gonna answer them all!",
+                "Do you want an achievement?",
+                "A!"
+            ]
+        },
+        "hour": "hour",
+        "hours": "hours",
+        "minute": "minute",
+        "minutes": "minutes",
+        "second": "second",
+        "seconds": "seconds",
+        "final time": "final time",
+        "percentage": "percentage",
+        "average": "average",
+        "game started": "Game Started"
+    },
+    "br": {
+        "play": "jogar",
+        "leaderboards": "placares",
+        "about us": "sobre nós",
+        "super easy": "super fácil",
+        "easy": "fácil",
+        "medium": "médio",
+        "hard": "difícil",
+        "impossible": "impossivel",
+        "time spent": "Tempo gasto",
+        "question": "questão",
+        "finish": "finalizar",
+        "time spent per question": "Tempo gasto por questão",
+        "questions": "questões",
+        "time": "tempo",
+        "phrases": {
+            "0": [
+                "You tried??",
+                "I was expecting that",
+                "Uh oh...",
+                "Wow, impressive eh?",
+                "¯\\_(ツ)_/¯",
+                "Please, why?",
+                "You must be trolling me",
+                "F!"
+            ],
+            "20": [
+                "We did our best, right?",
+                "One step at a time",
+                "Slowly but surely",
+                "D!"
+            ],
+            "50": [
+                "Wohooo, lets go!",
+                "Half perfect, half terrible",
+                "Ezpz",
+                "C!"
+            ],
+            "80": [
+                "That was close!",
+                "You\"re getting good",
+                "B!"
+            ],
+            "100": [
+                "Im so proud",
+                "100%!!",
+                "Gonna answer them all!",
+                "Do you want an achievement?",
+                "A!"
+            ]
+        },
+        "hour": "hora",
+        "hours": "horas",
+        "minute": "minuto",
+        "minutes": "minutos",
+        "second": "segundo",
+        "seconds": "segundos",
+        "final time": "tempo final",
+        "percentage": "porcentagem",
+        "average": "média",
+        "game started": "jogo começou"
+    }
+}
