@@ -32,6 +32,6 @@ Repository to share some minor projects I made while learning or just trying som
     <img src="https://i.imgur.com/ViQx9Y0.png" alt="SpeedMath" align="left" width="500"/>
 </div>
 
-<h2><a href="https://htmlpreview.github.io/?https://github.com/Nick-Gabe/Mini-Projects/blob/Nick-Gabe-patch-1/SpeedM4th/index.html" target="_blank">SpeedM4th</a></h2>
+<h2><a href="https://htmlpreview.github.io/?https://github.com/Nick-Gabe/Mini-Projects/blob/main/SpeedM4th/index.html" target="_blank">SpeedM4th</a></h2>
 <h6>My first serious site, it's meant to help you improve your reaction time with math. I tried to maintain a pattern under the structures, making the site responsive and working on mobile, using apis, not using global variables. Well, I learned a lot by doing it.</h6>
 <br><br>
