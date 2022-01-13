@@ -39,18 +39,18 @@ async function start() {
         e.key === "Enter" && validateAnswer(calcHistory.at(-1), question.input.value)
     }
 
-    menu.counter.onclick = (e) => {
+    menu.counter.addEventListener('click', (e) => {
         startGame()
         menu.counter.classList.remove('clickable')
         menu.endless.classList.remove('clickable')
-    }
-    menu.endless.onclick = (e = PointerEvent, x = menu.endless) => {
+    })
+    menu.endless.addEventListener('click', (e = PointerEvent, x = menu.endless) => {
         x.value = x.value === 'false' ? true : false
         startGame()
         menu.endless.classList.remove('clickable')
         menu.counter.classList.remove('clickable')
-    }
-    // menu.language.onclick = (e, x = menu.language) => {
+    })
+    // menu.language.addEventListener('click', (e, x = menu.language) => {
     //     const langs = [
     //         {
     //             abbr: 'en',
@@ -81,16 +81,16 @@ async function start() {
     //     menu.difficulty.innerHTML = menu.difficulty.innerHTML.replace(/super easy|easy|medium|hard|impossible/g, e => lang[e])
     // }
 
-    question.end.onclick = (e) => {
+    question.end.addEventListener('click', (e) => {
         timestamps.push([
             calcHistory.length, // question number
             unix, // - timestamps === [] ? timestamps.at(-1)[1] : 0 // time on this question
             `${calcHistory.length}. ${calc.num1} ${calc.type} ${calc.num2}`, // question number
         ])
         generateResults()
-    }
+    })
 
-    results.restart.onclick = (e) => {
+    results.restart.addEventListener('click', (e) => {
         results.container.classList.add('fade-out')
         setTimeout(() => {
             results.container.style.display = 'none'
@@ -107,17 +107,17 @@ async function start() {
         menu.counter = document.getElementById('menu-counter')
         menu.difficulty = document.getElementById('menu-difficulty')
 
-        menu.counter.onclick = (e) => {
+        menu.counter.addEventListener('click', (e) => {
             startGame()
             menu.counter.classList.remove('clickable')
-        }
-        menu.endless.onclick = (e = PointerEvent, x = menu.endless) => {
+        })
+        menu.endless.addEventListener('click', (e = PointerEvent, x = menu.endless) => {
             x.value = x.value === 'false' ? true : false
             startGame()
             menu.endless.classList.remove('clickable')
             menu.counter.classList.remove('clickable')
-        }
-    }
+        })
+    })
 
     function generateCalc(dom = question.calc, title = question.title) {
         const difficulty = menu.difficulty.value
