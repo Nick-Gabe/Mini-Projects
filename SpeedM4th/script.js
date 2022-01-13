@@ -39,18 +39,18 @@ async function start() {
         e.key === "Enter" && validateAnswer(calcHistory.at(-1), question.input.value)
     }
 
-    menu.counter.addEventListener('click', (e) => {
+    menu.counter.on('click', (e) => {
         startGame()
         menu.counter.classList.remove('clickable')
         menu.endless.classList.remove('clickable')
     })
-    menu.endless.addEventListener('click', (e = PointerEvent, x = menu.endless) => {
+    menu.endless.on('click', (e = PointerEvent, x = menu.endless) => {
         x.value = x.value === 'false' ? true : false
         startGame()
         menu.endless.classList.remove('clickable')
         menu.counter.classList.remove('clickable')
     })
-    // menu.language.addEventListener('click', (e, x = menu.language) => {
+    // menu.language.on('click', (e, x = menu.language) => {
     //     const langs = [
     //         {
     //             abbr: 'en',
@@ -81,7 +81,7 @@ async function start() {
     //     menu.difficulty.innerHTML = menu.difficulty.innerHTML.replace(/super easy|easy|medium|hard|impossible/g, e => lang[e])
     // }
 
-    question.end.addEventListener('click', (e) => {
+    question.end.on('click', (e) => {
         timestamps.push([
             calcHistory.length, // question number
             unix, // - timestamps === [] ? timestamps.at(-1)[1] : 0 // time on this question
@@ -90,7 +90,7 @@ async function start() {
         generateResults()
     })
 
-    results.restart.addEventListener('click', (e) => {
+    results.restart.on('click', (e) => {
         results.container.classList.add('fade-out')
         setTimeout(() => {
             results.container.style.display = 'none'
@@ -107,11 +107,11 @@ async function start() {
         menu.counter = document.getElementById('menu-counter')
         menu.difficulty = document.getElementById('menu-difficulty')
 
-        menu.counter.addEventListener('click', (e) => {
+        menu.counter.on('click', (e) => {
             startGame()
             menu.counter.classList.remove('clickable')
         })
-        menu.endless.addEventListener('click', (e = PointerEvent, x = menu.endless) => {
+        menu.endless.on('click', (e = PointerEvent, x = menu.endless) => {
             x.value = x.value === 'false' ? true : false
             startGame()
             menu.endless.classList.remove('clickable')
