@@ -7,6 +7,7 @@
 .chat-top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 50px;
     box-shadow: 0px .4px 2px var(--dark);
 }
@@ -38,12 +39,19 @@
 .chat-description {
     color: var(--icons);
     font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .chat-options {
     display: flex;
     align-items: center;
     color: #b9bbbe;
+    background-color: var(--brightGray);
+    z-index: 2;
+    position: absolute;
+    right: 0;
 }
 
 .chat-options > .below-popup {
@@ -123,7 +131,6 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid var(--dark);
-
 }
 
 .below-popup:hover {
@@ -148,15 +155,20 @@
 }
 
 .chat-center {
-    width: 10px;
+    position: relative;
+    width: 77%;
+    max-width: 77%;
+    height: 576px;
 }
 
 .chat-bar {
+    overflow: hidden;
     position: fixed;
     display: flex;
     align-items: center;
     bottom: 0;
-    width: 665px;
+    /* width: 665px; */
+    width: 54%;
     background-color: #41444b;
     margin: 20px 10px;
     border-radius: 8px;
