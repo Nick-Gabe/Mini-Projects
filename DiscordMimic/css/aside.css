@@ -1,0 +1,124 @@
+body > aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1000px;
+    width: 72px;
+    padding: 5px 0;
+    background-color: var(--dark);
+}
+
+hr {
+    width: 40%;
+    height: 2px;
+    background-color: var(--brightGray);
+    margin: 10px auto;
+}
+
+.servers-container {
+    height: inherit;
+}
+
+.servers-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: 
+        border-radius 250ms,
+        background-color 250ms;
+    margin-bottom: 10px;
+}
+
+.servers-icon > .image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--brightGray);
+    transition: 
+        border-radius 250ms,
+        background-color 250ms;
+}
+
+.servers-icon.main {
+    position: relative;
+    background-color: var(--brightGray);
+    background-image: url(./img/imageLogo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 27px;
+}
+
+.servers-icon::before {
+    position: absolute;
+    content: '';
+    left: -15px;
+    height: 0px;
+    background-color: white;
+    border-radius: 10px;
+    border-right: 0px solid white;
+    transition:
+        border-right 250ms,
+        height 250ms;
+}
+
+.servers-icon:hover, .servers-icon:hover .image {
+    cursor: pointer;
+    border-radius: 38%;
+    background-color: var(--blurple);
+}
+
+.servers-icon:hover:before {
+    border-right: 8px solid white;
+    height: 20px;
+} 
+
+.servers-icon.new {
+    background-color: var(--brightGray);
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: var(--green);
+    transition: 
+        border-radius 250ms,
+        color 250ms,
+        background-color 250ms;
+}
+
+.servers-icon.new::before {
+    content: none;
+}
+
+.servers-icon.new:hover {
+    background-color: var(--green);
+    color: white;
+}
+
+.servers-icon.discover {
+    background-color: var(--brightGray);
+}
+
+.servers-icon.discover > .image {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition:
+        opacity 250ms;
+}
+
+.servers-icon.discover:hover .image {
+    background-color: var(--green);
+    border-radius: 50%;
+}
+
+.servers-icon.discover:hover {
+    background-color: var(--green);
+}
+
+.servers-icon.discover:hover .image:nth-child(2) {
+    opacity: 0;
+}
