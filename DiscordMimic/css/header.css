@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* font-size: 20px; */
+    --dark: #202225;
+    --grayDark: #292b2f;
+    --gray: #2f3136;
+    --brightGray: #36393f;
+    --icons: #b9bbbe;
+    --blurple: #635cf0;
+    --green: #48a75e;
+    --serversBar: 0.95rem;
+}
+
+body {
+    font-size: 20px;
+    background-color: var(--dark);
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body > header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 22px;
+    background-color: var(--dark);
+    padding: 0 10px;
+}

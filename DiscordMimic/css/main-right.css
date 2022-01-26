@@ -1,0 +1,81 @@
+.right-tab {
+    position: absolute;
+    right: 0;
+    width: 240px;
+    height: 1000px;
+    background-color: var(--gray);
+    padding: 0 5px;
+}
+
+.chat-members {
+    font-family: system-ui;
+    text-transform: uppercase;
+    color: #73767d;
+    font-size: small;
+    font-weight: bold;
+}
+
+.chat-members > .title {
+    margin: 20px 0 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.chat-members > .title > .divider {
+    margin: 0 5px;
+    width: 8px;
+    height: 2px;
+    background-color: #73767d;
+}
+
+.chat-members > li img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+
+.chat-members .info {
+    position: relative;
+    text-transform: none;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    padding: 3px 10px;
+}
+
+.chat-members > li:hover {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--brightGray);
+}
+
+.chat-members .name {
+    margin-left: 10px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.status-online {
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px var(--gray);
+}
+
+.status-idle {
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    width: 7px;
+    height: 7px;
+    background-color:var(--gray);
+    border-radius: 50%;
+    box-shadow: 
+        2px 2px 0 2px #F4A41A,
+        2px 1px 0 5px var(--gray);
+}
