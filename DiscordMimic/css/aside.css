@@ -46,7 +46,7 @@ hr {
 .servers-icon.main {
     position: relative;
     background-color: var(--brightGray);
-    background-image: url(../img/imageLogo.png);
+    background-image: url(./img/imageLogo.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 27px;
