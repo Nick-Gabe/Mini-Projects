@@ -91,10 +91,6 @@
     color: #72767D;
 }
 
-.search-input:not(.search-input:placeholder-shown) {
-    background-color: red;
-}
-
 .search-icon {
     position: absolute;
     right: 20px;
@@ -162,10 +158,10 @@
 }
 
 .chat-bar {
-    overflow: hidden;
     position: fixed;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     bottom: 0;
     /* width: 665px; */
     width: 54%;
@@ -173,6 +169,12 @@
     margin: 20px 10px;
     border-radius: 8px;
     padding: 10px;
+    z-index: 2;
+}
+
+.chat-bar > .left{
+    display: flex;
+    align-items: center;
 }
 
 .chat-bar input {
@@ -180,9 +182,11 @@
     margin-left: 10px;
     color: var(--icons);
     font-weight: lighter;
+    width: 420px;
 }
 
 .chat-bar .addFiles {
+    display: inline-block;
     background-color: var(--icons);
     text-align: center;
     font-weight: bolder;
@@ -195,4 +199,33 @@
 .chat-bar .addFiles:hover {
     background-color: white;
     cursor: pointer;
+}
+
+.chat-bar > .right {
+    display: flex;
+    color: var(--icons);
+}
+
+.chat-bar > .right > div {
+    margin-left: 10px;
+}
+
+.chat-bar > .right > div:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.gray {
+    filter: grayscale(1);
+    width: 24px;
+    height: 24px;
+}
+
+
+.chat-option > .name::before {
+    bottom: 10px;
+}
+
+.chat-option > .name {
+    bottom: 40px;
 }
